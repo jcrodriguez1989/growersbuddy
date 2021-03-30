@@ -146,7 +146,7 @@ On the other hand, as an immediate next step, we are currently working on the se
 
 ## Reproducibility
 
-All the work presented in this post can be easily replicated. The full code is available on [GitHub](https://github.com/jcrodriguez1989/growerdsbuddy/).
+All the work presented in this post can be easily replicated. The full code is available on [GitHub](https://github.com/jcrodriguez1989/growersbuddy/).
 
 ## Acknowledgments
 

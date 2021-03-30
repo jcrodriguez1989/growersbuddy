@@ -231,7 +231,7 @@ environments to maximize cannabis yields.
 
 All the work presented in this post can be easily replicated. The full
 code is available on
-[GitHub](https://github.com/jcrodriguez1989/growerdsbuddy/).
+[GitHub](https://github.com/jcrodriguez1989/growersbuddy/).
 
 ## Acknowledgments
 

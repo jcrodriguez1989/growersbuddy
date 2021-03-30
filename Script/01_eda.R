@@ -1,6 +1,9 @@
 library("dplyr")
 library("GGally")
 library("ggplot2")
+library("gistr")
+library("glue")
+library("knitr")
 library("PCAmixdata")
 library("purrr")
 library("readr")
@@ -122,7 +125,12 @@ map(signif_res, ~ .x$feature_test) %>%
   bind_rows() %>%
   mutate(Variable = rownames(.), `Significant at 0.1` = `Pr(>F)` <= c_off, `p-value` = `Pr(>F)`) %>%
   select(Variable, `p-value`, `Significant at 0.1`) %>%
-  arrange(`p-value`)
+  arrange(`p-value`) %>%
+  kable(digits = 3, format = "markdown") %>%
+  as.character() %>%
+  paste(collapse = "\n") %>%
+  cat(file = "Tables/growersbuddy_categ_signif.md")
+# gist_create("Tables/growersbuddy_categ_signif.md")
 
 # Some plots relating categorical variables with `weight`.
 select_at(clean_logs, setdiff(int_vars, c("breeder_name", "strain"))) %>%
@@ -143,5 +151,10 @@ int_vars[map_lgl(int_vars, ~ !is.numeric(pull(clean_logs, .x)))] %>%
       arrange(desc(mean_weight)) %>%
       filter(n_logs >= 3) %>%
       drop_na() %>%
-      slice_head(n = 5)
+      slice_head(n = 5) %>%
+      kable(digits = 2) %>%
+      as.character() %>%
+      paste(collapse = "\n") %>%
+      cat(file = glue("Tables/growersbuddy_categ_summary_{int_var}.md"))
+    # gist_create(glue("Tables/growersbuddy_categ_summary_{int_var}.md"))
   })
