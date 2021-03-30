@@ -109,7 +109,7 @@ not a variable that shows a great individual correlation with the
 0.27 respectively, `indoor_height` and `indoor_width` present 0.31 and
 0.23, and `n_lights` has a value of 0.23, which shows that, as is known,
 the total product `weight` is influenced by time at each stage, the size
-of the cultivation area and the lighting.
+of the cultivation area, and the lighting.
 
 <div class="figure" style="text-align: center">
 

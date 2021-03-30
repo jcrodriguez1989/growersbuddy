@@ -143,18 +143,18 @@ int_vars[map_lgl(int_vars, ~ !is.numeric(pull(clean_logs, .x)))] %>%
   map(function(int_var) {
     group_by_at(clean_logs, int_var) %>%
       summarise(
-        n_logs = n(),
-        mean_weight = mean(weight),
-        median_weight = median(weight),
+        Logs = n(),
+        `Mean weight` = mean(weight),
+        `Median weight` = median(weight),
         .groups = "drop"
       ) %>%
-      arrange(desc(mean_weight)) %>%
-      filter(n_logs >= 3) %>%
+      arrange(desc(`Mean weight`)) %>%
+      filter(Logs >= 3) %>%
       drop_na() %>%
       slice_head(n = 5) %>%
       kable(digits = 2) %>%
       as.character() %>%
       paste(collapse = "\n") %>%
       cat(file = glue("Tables/growersbuddy_categ_summary_{int_var}.md"))
-    # gist_create(glue("Tables/growersbuddy_categ_summary_{int_var}.md"))
+    gist_create(glue("Tables/growersbuddy_categ_summary_{int_var}.md"))
   })
