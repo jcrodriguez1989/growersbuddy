@@ -1,0 +1,8 @@
+---
+output: github_document
+---
+
+# Data Science Tips for Improving Your Cannabis Yields
+
+<!-- TODO: Add post link. -->
+Code to reproduce the findings presented at the _"Data Science Tips for Improving Your Cannabis Yields"_ blog post.
