@@ -1,0 +1,128 @@
+weight,breeder_name,strain,strain.type,strain.strainClass,tree_medium,germination_days,vegetative_days,flowering_days,env,exposure_time,indoor_height,indoor_length,indoor_width,indoor_dims,total_wattage,n_lights,light_n_types
+17,barneys farm,glookies,NA,NA,soil,21,31,38,indoor,12,70,36,36,90720,1200,2,1
+138,NA,3 pc nugget x pink teddy,automatic,hybrid,NA,0,26,55,indoor,20,183,122,122,2723772,480,1,1
+13.5,420 genetics,critical,NA,NA,soil,12,30,71,indoor,12,NA,NA,NA,NA,72,1,1
+35.76,seedsman,auto amnesia,NA,NA,coco,21,78,59,indoor,12,NA,NA,NA,NA,600,2,1
+101,dinafem,original amnesia,NA,NA,NA,15,49,67,outdoor,12,NA,NA,NA,NA,0,0,0
+43,seedsman,northern lights,NA,NA,coco,5,36,34,indoor,24,53,24,32,40704,1800,1,1
+20.2,seedsman,gelat.og,NA,NA,soil,10,12,47,indoor,18,36,30,18,19440,150,1,1
+34,kannabia seeds,lemon haze auto,NA,NA,soil,11,17,40,indoor,18,NA,NA,NA,NA,230,1,1
+129,mephisto genetics,auto skywalker,NA,NA,soil,10,12,54,indoor,24,60,48,24,69120,0,0,1
+34,NA,bam bam,automatic,hybrid,hydro,5,41,58,indoor,18,NA,NA,NA,NA,605,1,1
+41,NA,bam bam,automatic,hybrid,hydro,4,42,58,indoor,18,NA,NA,NA,NA,605,1,1
+77,NA,bam bam,automatic,hybrid,hydro,4,42,58,indoor,18,NA,NA,NA,NA,605,1,1
+82,seedsman,blueberry,NA,NA,coco,2,61,138,indoor,12,NA,NA,NA,NA,0,0,0
+90,kannabia seeds,bcn diesel cbd,NA,NA,hydro,9,32,58,indoor,12,78,30,56,131040,202,1,1
+56,NA,bitchen camaro ,automatic,hybrid,hydro,4,33,80,indoor,18,NA,NA,NA,NA,605,1,1
+53.2,NA,evil banner × banana blaze,automatic,hybrid,soil,10,12,52,indoor,18,36,30,18,19440,150,1,1
+51.7,sweet seeds,bloody skunk auto,NA,NA,soil,10,10,42,indoor,18,36,30,18,19440,150,1,1
+127.4,NA,blue dream 1,regular,hybrid,soil,9,75,91,indoor,18,80,48,48,184320,0,0,1
+84,variety of cannabis,blue dream auto,NA,NA,soil,4,28,45,indoor,20,80,60,60,288000,450,1,1
+19,clone only strains,blue dream,NA,NA,hydro,0,34,59,indoor,12,NA,NA,NA,NA,1000,1,1
+364,NA,blue dream ,Feminized,sativa,NA,21,30,75,indoor,12,72,36,36,93312,550,4,1
+168,NA,blueberry #3,Feminized,hybrid,soil,31,41,56,indoor,12,NA,NA,NA,NA,1000,1,1
+28.55,monster genetics,bruce banner auto,NA,NA,soil,4,23,40,indoor,18,50,30,50,75000,150,1,1
+52,NA,bubblegum breath ,automatic,hybrid,hydro,4,33,80,indoor,18,NA,NA,NA,NA,605,1,1
+94,NA,bubblegum breath ,automatic,hybrid,hydro,4,33,80,indoor,18,NA,NA,NA,NA,605,1,1
+115,resin seeds,cannatonic,NA,NA,soil,13,59,70,indoor,12,60,20,36,43200,400,2,1
+73,unknown or legendary,caramelicious,NA,NA,soil,6,31,67,indoor,12,NA,NA,NA,NA,2000,1,1
+50,NA,carebears,automatic,hybrid,coco,7,30,33,indoor,20,244,244,122,7263392,690,2,1
+393,cbd crew,cbd mango haze,NA,NA,coco,7,42,104,indoor,24,84,48,48,193536,510,1,1
+112,seedsman,cheese,NA,NA,coco,48,51,81,indoor,18,48,24,24,27648,1000,1,1
+75.6,NA,cherry cbd,Feminized,hybrid,soil,10,63,45,outdoor,13,NA,NA,NA,NA,0,0,0
+100,th seeds,chocolate chunk,NA,NA,soil,0,NA,60,indoor,12,NA,NA,NA,NA,4000,2,1
+44,elev8 seeds,dosi sherbet,NA,NA,soil,0,37,67,indoor,12,NA,NA,NA,NA,2000,1,1
+70,tree of life seeds,cherry wine,NA,NA,soil,11,67,60,outdoor,11,NA,NA,NA,NA,0,0,0
+25,NA,creme de la chem,Feminized,hybrid,NA,3,28,61,indoor,24,17,NA,NA,NA,200,2,1
+112,NA,critical kush ,Feminized,indica,soil,9,89,58,indoor,12,NA,NA,NA,NA,2300,4,2
+23,fast buds company,do si dos auto,NA,NA,NA,4,33,80,indoor,18,NA,NA,NA,NA,605,1,1
+60,barneys farm,dos si dos auto,NA,NA,soil,4,25,40,indoor,18,72,36,48,124416,500,2,1
+200,african seeds,durban poison,NA,NA,soil,4,77,55,indoor,12,NA,NA,NA,NA,500,1,1
+132,humboldt seed organisation,bubba kush,NA,NA,soil,13,40,51,indoor,12,72,60,20,86400,332,2,1
+51.21,royal queen seeds,fast eddy automatic,NA,NA,soil,14,27,35,indoor,18,160,91,51,742560,300,1,1
+58.4,dutch passion,durban poison,NA,NA,soil,5,41,104,indoor,0,NA,NA,NA,NA,0,0,0
+173,g13 labs,og13,NA,NA,soil,15,49,68,outdoor,12,NA,NA,NA,NA,0,0,0
+26,fast buds company,g14,NA,NA,hydro,4,33,80,indoor,18,NA,NA,NA,NA,605,1,1
+37,unknown or legendary,mango kush,NA,NA,soil,7,35,62,indoor,12,96,80,36,276480,1500,1,1
+399.59,NA,garlic crumpet,regular,hybrid,soil,18,56,76,indoor,18,NA,NA,NA,NA,0,0,1
+210.82,NA,garlic crumpet,regular,hybrid,NA,18,56,76,indoor,18,NA,NA,NA,NA,0,0,1
+257.14,NA,garlic crumpet,regular,hybrid,NA,18,56,76,indoor,18,NA,NA,NA,NA,0,0,1
+60,seedsman,gelat.og,NA,NA,soil,12,49,51,indoor,12,72,60,20,86400,332,2,1
+146,seedsman,gelat.og,NA,NA,NA,11,34,64,indoor,12,60,48,24,69120,300,1,1
+56,NA,ginger punch,automatic,hybrid,soil,9,27,31,indoor,18,NA,NA,NA,NA,230,1,1
+52,auto seeds,girl scout cookies auto,NA,NA,coco,5,42,51,indoor,12,NA,NA,NA,NA,150,1,1
+116,barneys farm,glue gelato auto,NA,NA,NA,4,27,69,indoor,20,80,60,60,288000,450,1,1
+14,expert seeds,glueberry,NA,NA,NA,26,47,53,indoor,18,NA,NA,NA,NA,250,2,1
+112,aurora winds botanical seeds,gods gift,NA,NA,hydro,0,95,63,indoor,16,60,48,24,69120,240,1,1
+117,seedsman,gelat.og,NA,NA,coco,5,61,138,indoor,12,NA,NA,NA,NA,0,0,0
+40,NA,gorilla breath,regular,hybrid,coco,11,59,85,indoor,0,NA,NA,NA,NA,0,0,0
+340,bsf seeds,gorilla glue #4,NA,NA,hydro,84,0,64,indoor,12,72,36,36,93312,550,4,1
+111,auto seeds,gorilla glue auto,NA,NA,soil,3,38,45,outdoor,12,NA,NA,NA,NA,0,0,1
+170,bsf seeds,gorilla glue #4,NA,NA,NA,0,82,79,indoor,12,72,36,36,93312,550,4,1
+82,barneys farm,gorilla zkittlez,NA,NA,soil,5,37,74,indoor,18,NA,NA,NA,NA,3200,3,1
+90,concrete jungle seeds,grand daddy purple,NA,NA,hydro,9,32,58,indoor,12,78,30,56,131040,202,1,1
+60,elev8 seeds,harlequin,NA,NA,soil,15,84,65,indoor,12,60,20,36,43200,400,2,1
+40,bulk seeds,auto jack herer,NA,NA,coco,7,34,46,indoor,20,NA,NA,NA,NA,95,1,1
+53.5,auto seeds,girl scout cookies auto,NA,NA,soil,10,16,47,indoor,18,63,36,18,40824,150,1,1
+28,pyramid seeds,tutankhamon,NA,NA,NA,0,93,66,indoor,10,91,105,105,1003275,600,1,1
+120,NA,kracken,automatic,hybrid,hydro,4,33,80,indoor,18,NA,NA,NA,NA,605,1,1
+78,NA,kracken,automatic,hybrid,hydro,4,33,80,indoor,18,NA,NA,NA,NA,605,1,1
+90,kannabia seeds,kritikal-k,NA,NA,soil,20,22,58,indoor,18,NA,NA,NA,NA,230,1,1
+11,NA,krumpets f3,regular,hybrid,coco,30,15,65,outdoor,12,NA,NA,NA,NA,0,0,0
+24,NA,NA,NA,NA,soil,4,34,58,indoor,12,48,24,24,27648,132,1,1
+145,clone only strains,skywalker og,NA,NA,soil,4,133,79,indoor,12,NA,NA,NA,NA,500,1,1
+176,barneys farm,lsd auto,NA,NA,soil,3,68,66,indoor,12,NA,NA,NA,NA,500,1,1
+8.05,sweet seeds,red poison auto,NA,NA,NA,5,18,43,indoor,19,48,24,24,27648,1000,1,1
+45,mephisto genetics,manbearalienpig,NA,NA,hydro,5,17,49,indoor,24,36,12,12,5184,210,1,1
+15,barneys farm,sweet tooth,NA,NA,soil,0,82,53,indoor,12,63,32,32,64512,300,1,1
+30.6,auto seeds,girl scout cookies auto,NA,NA,soil,12,19,50,indoor,18,63,36,18,40824,150,1,1
+10.5,NA,meph bag,automatic,hybrid,soil,11,9,45,indoor,18,36,30,18,19440,150,1,1
+13.5,NA,mephisto bag seed,automatic,hybrid,soil,8,16,41,indoor,18,36,30,18,19440,150,1,1
+4.8,420 genetics,white widow,NA,NA,soil,29,35,59,indoor,18,NA,NA,NA,NA,150,1,1
+7.5,NA,durban poison,Feminized,sativa,coco,4,37,55,indoor,12,NA,NA,NA,NA,2000,1,1
+117,th seeds,mob,NA,NA,soil,14,66,40,indoor,12,NA,NA,NA,NA,3000,1,1
+167,th seeds,mob,NA,NA,soil,14,66,42,indoor,12,NA,NA,NA,NA,3000,1,1
+42,dinafem,moby dick xxl autoflowering,NA,NA,soil,4,36,47,indoor,20,80,60,60,288000,450,1,1
+56,NA,mystery#2,automatic,hybrid,NA,4,35,47,indoor,20,NA,NA,NA,NA,660,1,1
+30,00 seeds bank,northern lights,NA,NA,soil,15,82,66,indoor,12,60,48,24,69120,600,1,1
+81.5,mephisto genetics,northern cheese haze,NA,NA,soil,0,36,32,indoor,24,93,36,36,120528,300,1,1
+144,seed stockers,northern lights autoflower,NA,NA,soil,4,36,71,indoor,20,80,60,60,288000,450,1,1
+300,NA,obi-wan kush,Feminized,hybrid,NA,20,41,80,indoor,12,72,36,36,93312,550,4,1
+84,barneys farm,pineapple express,NA,NA,NA,4,45,62,indoor,20,80,60,60,288000,450,1,1
+84,barneys farm,pineapple express,NA,NA,NA,4,26,57,indoor,20,80,60,60,288000,450,1,1
+44,growers choice,pure indica,NA,NA,soil,16,27,51,indoor,18,NA,NA,NA,NA,230,1,1
+127,seedsman,critical purple kush,NA,NA,soil,13,61,59,indoor,12,72,36,36,93312,315,1,1
+22.4,NA,purple kush cbd 1:1 auto - seedsman,automatic,indica,soil,10,13,48,indoor,18,36,30,18,19440,150,1,1
+100,sagarmatha seeds,purple pinecone,NA,NA,NA,9,32,58,indoor,12,78,30,56,131040,202,1,1
+7.6,fast buds company,original auto bubblegum,NA,NA,soil,11,9,44,indoor,18,36,30,18,19440,150,1,1
+24,NA,sfv og,Feminized,hybrid,soil,17,50,94,indoor,12,NA,NA,NA,NA,2000,1,1
+20,NA,sherbert cookies ,regular,indica,soil,12,40,49,outdoor,13,NA,NA,NA,NA,0,0,0
+33,fast buds company,zkittlez auto,NA,NA,soil,4,24,60,indoor,0,NA,NA,NA,NA,0,0,0
+28.3,elite seeds,solodiol auto,NA,NA,soil,11,12,46,indoor,18,36,30,18,19440,150,1,1
+52,unknown or legendary,sunset sherbert,NA,NA,coco,12,64,59,indoor,18,80,48,48,184320,619,1,1
+42,mephisto genetics,auto blues,NA,NA,hydro,5,17,49,indoor,24,36,12,12,5184,210,1,1
+12.5,NA,super orange haze,automatic,sativa,soil,10,15,35,indoor,18,36,30,18,19440,150,1,1
+12.3,garden of green,super skunk kush,NA,NA,soil,11,23,63,indoor,16,20,9,9,1620,75,3,1
+280,garden of green,sweetberry cough auto,NA,NA,coco,7,14,49,indoor,21,244,122,122,3631696,600,1,1
+28,sweet seeds,sweet zkittlez,NA,NA,soil,0,36,55,indoor,12,72,60,20,86400,332,2,1
+45.6,barneys farm,tangerine dream auto,NA,NA,soil,4,51,51,indoor,20,NA,NA,NA,NA,0,0,0
+25,original strains,unknown strain,NA,NA,soil,28,108,78,indoor,24,30,20,20,12000,0,0,0
+63.5,NA,e-m tester,automatic,hybrid,soil,12,12,57,indoor,18,36,30,18,19440,150,1,1
+85,NA,NA,NA,NA,soil,11,61,58,indoor,12,60,48,24,69120,1000,1,1
+16,NA,turtle toez,Feminized,indica,soil,5,42,60,indoor,18,60,24,48,69120,65,1,1
+43,NA,turtle toez,regular,hybrid,soil,5,42,60,indoor,18,60,24,48,69120,65,1,1
+82.23,NA,NA,NA,NA,soil,16,26,59,indoor,12,60,48,24,69120,1000,1,1
+93.8,NA,wedding cake,Feminized,hybrid,NA,0,0,9,indoor,18,64,30,42,80640,720,3,1
+15,NA,white chocolate gorilla,Feminized,hybrid,soil,16,83,41,outdoor,14,NA,NA,NA,NA,0,0,0
+250,big head seeds,wedding cake,NA,NA,NA,32,66,76,indoor,12,72,36,36,93312,550,4,1
+160.4,seedsman,white widow,NA,NA,soil,10,66,55,indoor,12,NA,NA,NA,NA,3000,1,1
+72,NA,white widow ,automatic,hybrid,hydro,4,33,80,indoor,18,NA,NA,NA,NA,605,1,1
+264.4,seedsman,white widow,NA,NA,soil,6,66,58,indoor,12,NA,NA,NA,NA,3000,1,1
+77,seed stockers,white widow autoflower,NA,NA,coco,5,42,51,indoor,12,NA,NA,NA,NA,150,1,1
+26,seedsman,white widow,NA,NA,soil,20,121,73,indoor,20,77,77,77,456533,5545,3,1
+100,seedsman,white widow,NA,NA,hydro,9,32,58,indoor,12,78,30,56,131040,202,1,1
+28,concrete jungle seeds,grand daddy purple,NA,NA,NA,8,32,69,indoor,12,60,48,2,5760,2400,1,1
+28,concrete jungle seeds,grand daddy purple,NA,NA,NA,8,32,69,indoor,12,60,48,2,5760,2400,1,1
+63,unknown or legendary,white widow,NA,NA,soil,0,21,56,indoor,12,80,60,60,288000,2000,1,1
+186,420 genetics,white widow auto,NA,NA,soil,6,31,42,indoor,20,56,24,24,32256,2000,1,1
+59,NA,zkittles,automatic,indica,coco,9,40,35,indoor,18,62,36,20,44640,240,1,1

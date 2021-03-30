@@ -1,0 +1,153 @@
+---
+title: "Data Science Tips for Improving Your Cannabis Yields"
+author: "Cannabis Data Science Group, by Juan Cruz Rodriguez"
+date: "3/30/2021"
+output: github_document
+always_allow_html: true
+---
+
+```{r setup, include=FALSE}
+library("dplyr")
+library("knitr")
+library("purrr")
+library("readr")
+library("tidyr")
+
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.align = "center")
+```
+
+```{r data, include=FALSE}
+clean_logs <- read_csv("../Data/clean_logs.csv", col_types = cols())
+int_vars <- colnames(clean_logs)
+```
+
+```{r aux_funs, include=FALSE}
+signif_features <- function(data, dep_var, c_off, columns) {
+  map(columns, function(column) {
+    aov_res <- aov(as.formula(paste(dep_var, "~", column)), data = data)
+    feature_test <- as.data.frame(summary(aov_res)[[1]][1, ])
+    res <- list(feature_test = feature_test)
+    if (feature_test$`Pr(>F)` <= c_off) {
+      res$contrasts_test <- TukeyHSD(aov_res)[[column]] %>%
+        as_tibble(rownames = "contrast") %>%
+        filter(`p adj` <= c_off)
+    }
+    res
+  }) %>%
+    setNames(columns)
+}
+```
+
+[**Grow with Jane**](https://growithjane.com/) is the mobile application that provides cannabis growers with the necessary tools to take maximum care of their plants. Jane results in a Swiss army knife for the home cannabis grower, providing tools from calculators and charts to logging and tracking. Jane's users log events related to each plant, and once they harvest, the grow log can be shared on Jane's social network, allowing knowledge to be shared in the community.
+
+Thanks to these [publicly shared cultivation records](https://growithjane.com/explore-growlogs), from a data science approach, we are able to explore and analyze different patterns that optimize the yields of cannabis growth, towards the definition of cultivation recommendations to improve the resulting product.
+
+To provide these growth recommendations, we analyzed a data set of `r nrow(clean_logs)` logs. The main objective of the study was to analyze the variability -to maximize- the resulting `weight` of the product -flowers-. To maximize the total flower `weight` of each plant, we analyze the effect of the variables:
+
+-   `breeder_name`: The name of the seed breeder company.
+-   `strain`: The name of the strain variety.
+-   `env`: Whether grown indoors or outdoors.
+-   `strain.type`: Either automatic, feminized, or regular.
+-   `strain.strainClass`: Be it Indica, Sativa, or hybrid.
+-   `tree_medium`: The medium in which it was grown, one of coconut, hydro, or soil.
+-   `germination_days`: Days that it was in the germination stage.
+-   `vegetative_days`: Days that it was in the vegetative stage.
+-   `flowering_days`: Days that it was in the flowering stage.
+-   `exposure_time`: Daily exposure time.
+-   `indoor_height`: The height of the indoor (if it is indoor).
+-   `indoor_length`: The length of the indoor (if it is indoor).
+-   `indoor_width`: The width of the indoor (if it is indoor).
+-   `indoor_dims`: The dimensions of the indoor (height \* length \* width).
+-   `n_lights`: The number of lights it had.
+-   `total_wattage`: The sum of the wattage of the lights.
+-   `light_n_types`: The number of different types of light it had.
+
+Before we begin, we present our variable of interest, the `weight` resulting from growth. In our data set, we found a minimum of `r min(clean_logs$weight)` grams, an average of `r round(mean(clean_logs$weight), 2)`, and a maximum of `r max(clean_logs$weight)` grams. Remember that this data is kindly provided by Jane users, so we may need a thorough cleanup of erroneous data. Let's start with the analysis of the effect of dependent variables on `weight`.
+
+*Note:* The idea of this post is to make it understandable to anyone, regardless of their background. That is why we will try to minimize technical details as much as possible. However, do not panic if something confuses you, it is not essential to understand the techniques or what is pointed out, but it is convenient to follow the thread of the project.
+
+## Principal Component Analysis
+
+Principal Component Analysis (PCA) is a statistical technique that attempts to map a large number of dependent variables to a smaller number of variables that explain the same observed effects. With the PCA we have not been able to obtain "such good" results statistically speaking since only 49% of the total variability is explained between the first two components. Furthermore, as shown in the figure, we can not easily observe an agglomeration of large or small dots (high/low gram production), which would indicate that some components would significantly influence the produced grams. However, it should be noted that the first component (it explains 31.56%) is mainly influenced by variables related to the size of the indoor. While in the second component, what most influences are, on the one hand, the variables related to the lights and the time of exposure to them, and on the other hand, the variables related to the time in the vegetative and flowering states.
+
+```{r pca, echo=FALSE, fig.cap="Principal component analysis. Each dot indicates a growth log. Larger dots indicate more total grams obtained. Dots near each label indicate a greater relationship of the point to those variables."}
+include_graphics("../Images/pca.png")
+```
+
+## Correlations Analysis of Numerical Variables
+
+Now, let's move on to analyzing the correlations between our variable of interest `weight` and the various individual dependent variables. The correlation between two features is a value between -1 and 1, which indicates whether two variables are positively or negatively correlated, for instance, a correlation value of -1 would be when one variable increases the other decreases in the same proportion. On the other hand, values close to 0 indicate that there is no correlation.
+
+To read the following diagram, what we do is select two variables of interest, one in a row and one in a column, and detect the cell at the intersection, that value is the correlation between them. In the graph below, to check for multiple correlations, we kept all variables present, that is, all pairwise correlations. For the interest of our project, we should focus mainly on the last row, which shows the correlations of the different variables vs `weight`. Although there is not a variable that shows a great individual correlation with the `weight`, it is interesting to note that the variables `germination_days` and `flowering_days` show a correlation of 0.29 and 0.27 respectively, `indoor_height` and `indoor_width` present 0.31 and 0.23, and `n_lights` has a value of 0.23, which shows that, as is known, the total product `weight` is influenced by time at each stage, the size of the cultivation area and the lighting.
+
+```{r corrs, echo=FALSE, fig.cap="Correlation analysis of numerical variables. A correlation value close to 1 (-1) will indicate a direct (inverse) relationship between two variables, meanwhile, a value close to 0 indicates no correlation."}
+include_graphics("../Images/corrs.png")
+```
+
+## Categorical Variables Analysis
+
+Let's now turn to the analysis of the effect of categorical variables on the `weight`. To detect the categorical variables that influence the `weight` produced, the statistical technique of ANalysis Of VAriance (ANOVA) was used. For each variable of interest, the ANOVA will return a statistical value, known as _p-value_, which denotes whether there is a significant relationship between the variable and `weight`. Then, given a cut-off value for the p-value, it is established whether the variable resulted statistically significant or not.
+
+```{r categorical_tests, echo=FALSE}
+c_off <- 0.1
+signif_res <- int_vars[map_lgl(int_vars, ~ !is.numeric(pull(clean_logs, .x)))] %>%
+  signif_features(clean_logs, "weight", c_off, .)
+map(signif_res, ~ .x$feature_test) %>%
+  bind_rows() %>%
+  mutate(Variable = rownames(.), `Significant at 0.1` = `Pr(>F)` <= c_off, `p-value` = `Pr(>F)`) %>%
+  select(Variable, `p-value`, `Significant at 0.1`) %>%
+  arrange(`p-value`) %>% 
+  kable(
+    digits = 3,
+    caption = paste0(
+      "Results of the analysis of variance between the `weight` and the rest of the categorical ", 
+      "variables. P-value significance cutoff level set at 0.1. A significant variable denotes ",
+      "that its effect influences the `weight` variable."
+    )
+  )
+```
+
+As we can see in the table above, at a cut-off level of 0.1, the variables `breeder_name` and `strain.type` resulted as statistically significant. Let's analyze the top-5 categories of each variable that result in the highest `weight` values -_to detect which pairwise category contrasts are statistically different, it is suggested to carry out a Tukey's Test_-.
+
+As seen below, the top categories in production grams result as "T.H.Seeds ™" for the breeder, "Garlic Crumpet" as the top strain, regular strain type, and Sativa for strain class. For the rest of the variables, we could not observe a "big" difference in terms of the resulting `weight` (_Tukey's Test should be performed_).
+
+```{r categorical_metrics, echo=FALSE, results="asis"}
+int_vars[map_lgl(int_vars, ~ !is.numeric(pull(clean_logs, .x)))] %>%
+  map(function(int_var) {
+    group_by_at(clean_logs, int_var) %>%
+      summarise(
+        Logs = n(),
+        `Mean weight` = mean(weight),
+        `Median weight` = median(weight),
+        .groups = "drop"
+      ) %>%
+      arrange(desc(`Mean weight`)) %>%
+      filter(Logs >= 3) %>%
+      drop_na() %>% 
+      slice_head(n = 5) %>% 
+      kable(digits = 2) %>%
+      print()
+  }) %>%
+  invisible()
+```
+
+
+## Conclusions
+
+Although we had "few" data samples to analyze (`r nrow(clean_logs)` logs; with many different categories), in the present work we were able to detect different variables that influence the resulting crop production. We confirmed that variables related to time in each growth stage, the size of the growing area, and the various sources of lighting significantly influence the grams of production. On the other hand, we provided tips for the moment to plan our cultivation, regarding the selection of breeder and strain, among others, that provide better results.
+Undoubtedly, with a greater amount of data, statistically speaking, more robust recommendations could be provided for both home and large-scale cultivation.
+
+## Next Steps
+
+As the next steps, it would be important to get more data, and in turn, also focus on cleaning up possibly bad data.
+
+On the other hand, as an immediate next step, we are currently working on the second part of this blog post, where we apply Machine Learning models to predict the grams of production. Using Machine Learning it is possible to evaluate different models in order to detect the one that best fits. Once the best model is detected, it can be used to obtain the expected number of grams for a selected combination of dependent variables. Towards, a tool to interactively simulate different growing environments to maximize cannabis yields.
+
+## Reproducibility
+
+All the work presented in this post can be easily replicated. The full code is available on [GitHub](https://github.com/jcrodriguez1989/growerdsbuddy/).
+
+## Acknowledgments
+
+I thank [Jorge Claudio Vargas Rojas](https://vinv.ucr.ac.cr/sigpro/web/researchers/206330512) for the discussion and design with respect to this project.
